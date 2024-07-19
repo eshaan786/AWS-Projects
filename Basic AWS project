@@ -1,0 +1,12 @@
+#!/bin/bash
+############
+#Author: Eshaan
+#Date: 20/7/2024
+echo "Print list of S3 buckets"
+aws s3 ls
+echo "Print list of ec2 instances"
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId.'
+echo "Print list of lambda functions"
+aws lambda list-functions
+echo "Print list of IAM Users"
+aws iam list-users
